@@ -21,7 +21,7 @@ header {
   width: 100%;
   background: black;
 }
-@media (width >= 775px) {
+@media (width >= 765px) {
   .fa-bars {
     display: none;
   }
@@ -92,15 +92,16 @@ header {
     opacity: 1;
     pointer-events: initial;
   }
-  .mega-dropdown {
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+
+  .question-btn {
+    display: none;
   }
   .mega-menu--item {
-    padding: 4rem 0;
-    & h3 {
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    & p {
       font-size: 1.8rem;
       text-transform: capitalize;
       letter-spacing: 0.2rem;
@@ -120,7 +121,7 @@ header {
   }
 }
 
-@media (width <= 775px) {
+@media (width <= 765px) {
   html {
     font-size: 52%;
   }
@@ -256,41 +257,99 @@ header {
     -ms-transition: all 0.6s linear;
     -o-transition: all 0.6s linear;
   }
+  .question {
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: 0.2rem;
+    /* background-color: red; */
+    height: 0;
+    cursor: pointer;
+
+    /* background: #fff; */
+    /* padding: 1rem 1.5rem; */
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    margin-bottom: 5rem;
+  }
+  .question-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem 2rem;
+  }
+  .question-answer {
+    padding: 1rem 1.5rem;
+    border-top: 0.1rem solid grey;
+    background-color: rgba(110, 60, 60, 0.1);
+    display: none;
+    transition: display 0.6s linear;
+    -webkit-transition: display 0.6s linear;
+    -moz-transition: display 0.6s linear;
+    -ms-transition: display 0.6s linear;
+    -o-transition: display 0.6s linear;
+
+    & p {
+      font-size: 1.6rem;
+      height: 100vh;
+    }
+  }
+  .question-btn {
+    font-size: 2rem;
+    background: transparent;
+    border-color: transparent;
+    cursor: pointer;
+    color: yellowgreen;
+  }
+  .minus-icon {
+    display: none;
+  }
+  .show-text .question-answer {
+    display: block;
+  }
+  .show-text .minus-icon {
+    display: inline;
+  }
+  .show-text .plus-icon {
+    display: none;
+  }
+  .show-text.question {
+    height: 16rem;
+  }
   .show.mega-drop--down {
     max-height: 100vh;
-    overflow: auto;
     pointer-events: initial;
   }
 
   .mega-menu--item {
-    background-color: rgba(255, 255, 255, 0.1);
+    /* background-color: rgba(255, 255, 255, 0.1); */
     margin: 1rem 0;
+  }
+  /* .mega-dropdown-sub--link {
+    margin-left: 1rem;
+    border-left: 0.2rem solid lightgoldenrodyellow;
+    padding: 2rem;
+  } */
 
-    & h3 {
-      font-size: 2rem;
-      text-transform: capitalize;
-      letter-spacing: 0.2rem;
-      padding: 0.5rem 2rem;
-    }
-    & ul {
-      & li {
-        & a {
-          background-color: rgba(255, 255, 255, 0.01);
-          display: flex;
-          padding: 1rem 1.5rem;
-          font-size: 1.5rem;
-          letter-spacing: 0.2rem;
-          color: #fff;
-          transition: all 0.4s linear;
-          -webkit-transition: all 0.4s linear;
-          -moz-transition: all 0.4s linear;
-          -ms-transition: all 0.4s linear;
-          -o-transition: all 0.4s linear;
-          &:hover {
-            background-color: #333;
-          }
-        }
-      }
+  .sub-links {
+    background-color: rgba(255, 255, 255, 0.01);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    color: #fff;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+    &:hover {
+      background-color: #333;
     }
   }
 }
